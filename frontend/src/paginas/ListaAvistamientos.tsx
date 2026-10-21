@@ -8,7 +8,7 @@ export function ListaAvistamientos(){
   let vigente=true;setCargando(true);setError(null);
   listarAvistamientos(criaturaId).then(x=>{if(vigente)setDatos(x);}).catch((e:unknown)=>{if(vigente)setError(e instanceof Error?e.message:'Error de carga');}).finally(()=>{if(vigente)setCargando(false);});
   return()=>{vigente=false;};
- },[recarga]);
+ },[criaturaId,recarga]);
  return <section><h1>Avistamientos</h1><p><Link to="/avistamientos/nuevo">Registrar avistamiento</Link></p>
   <label htmlFor="criatura-filtro">Criatura </label><select id="criatura-filtro" value={criaturaId} onChange={e=>setCriaturaId(e.target.value)}><option value="">Todas</option>{criaturas.map(c=><option key={c._id} value={c._id}>{c.nombre}</option>)}</select>
   <button onClick={()=>setRecarga(x=>x+1)}>Actualizar lista</button><EstadoCarga cargando={cargando} error={error} vacio={!datos.length}/>
