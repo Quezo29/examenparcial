@@ -17,7 +17,10 @@ export async function crear(body: unknown) {
 }
 export async function actualizar(id: string, body: unknown) {
   const cambios = cuerpo(body, campos);
-  const doc = await Criatura.findByIdAndUpdate(idValido(id), { $set: cambios }, { new: true });
+  if ('tipo' in cambios && !(TIPOS as readonly string[]).includes(cambios.tipo as string)) {
+    throw new ApiError(400, 'Tipo inválido: solo se admiten mitica, elemental, mecanica y espectral');
+  }
+  const doc = await Criatura.findByIdAndUpdate(idValido(id), { $set: cambios }, { new: true, runValidators: true });
   if (!doc) throw new ApiError(404, 'Criatura no encontrada');
   return doc;
 }
