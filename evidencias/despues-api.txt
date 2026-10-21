@@ -1,0 +1,52 @@
+﻿===== B-02 GET detalle poblado =====
+{"avistamiento":{"_id":"65a000000000000000000201","criatura":{"_id":"65a000000000000000000101","nombre":"La Ardilla del Martes","tipo":"elemental","habilidades":["aparece los martes"],"nivelPeligro":2,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-21T15:41:33.239Z","__v":0},"testigo":"Leslie Yepp","ubicacion":"Parque Ramsett","fecha":"2026-10-01T12:00:00.000Z","descripcion":"Dato ficticio de examen","createdAt":"2026-10-20T23:40:38.137Z","updatedAt":"2026-10-20T23:40:38.137Z","__v":0},"requestId":"f409fe6b-1407-4473-8e76-babc5352cb39"}
+HTTP_STATUS:200
+
+===== B-02 GET inexistente =====
+{"error":"Avistamiento no encontrado","requestId":"5c28160e-a984-4280-bbe6-4571e2ed9f4b"}
+HTTP_STATUS:404
+
+===== B-02 GET id mal formado =====
+{"error":"Identificador inv├ílido","requestId":"319d204c-0dc5-49d5-b921-769277f18665"}
+HTTP_STATUS:400
+
+===== B-01 PUT edicion valida =====
+{"avistamiento":{"_id":"65a000000000000000000201","criatura":"65a000000000000000000102","testigo":"Leslie Yepp","ubicacion":"Plaza Lotus","fecha":"2026-10-01T00:00:00.000Z","descripcion":"Dato ficticio de examen","createdAt":"2026-10-20T23:40:38.137Z","updatedAt":"2026-10-21T15:42:52.305Z","__v":0},"requestId":"188cdfaf-1a4f-4e64-a9e0-2eb754a588e8"}
+HTTP_STATUS:200
+
+===== B-01 GET confirma criatura y ubicacion =====
+{"avistamiento":{"_id":"65a000000000000000000201","criatura":{"_id":"65a000000000000000000102","nombre":"El Drag├│n del Estacionamiento","tipo":"mitica","habilidades":["escupe fuego"],"nivelPeligro":8,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-20T23:40:37.151Z","__v":0},"testigo":"Leslie Yepp","ubicacion":"Plaza Lotus","fecha":"2026-10-01T00:00:00.000Z","descripcion":"Dato ficticio de examen","createdAt":"2026-10-20T23:40:38.137Z","updatedAt":"2026-10-21T15:42:52.305Z","__v":0},"requestId":"8e8ef5fc-40aa-4eb4-9e24-49d0398f1371"}
+HTTP_STATUS:200
+
+===== B-01 PUT referencia inexistente =====
+{"error":"Criatura referenciada no encontrada","requestId":"fbb61e98-8e56-4ac3-838a-20726d250cac"}
+HTTP_STATUS:404
+
+===== B-01 GET conserva asociacion =====
+{"avistamiento":{"_id":"65a000000000000000000201","criatura":{"_id":"65a000000000000000000102","nombre":"El Drag├│n del Estacionamiento","tipo":"mitica","habilidades":["escupe fuego"],"nivelPeligro":8,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-20T23:40:37.151Z","__v":0},"testigo":"Leslie Yepp","ubicacion":"Plaza Lotus","fecha":"2026-10-01T00:00:00.000Z","descripcion":"Dato ficticio de examen","createdAt":"2026-10-20T23:40:38.137Z","updatedAt":"2026-10-21T15:42:52.305Z","__v":0},"requestId":"52778e18-baa3-4134-98ba-07f15074a86b"}
+HTTP_STATUS:200
+
+===== B-01 RESTORE semilla =====
+{"avistamiento":{"_id":"65a000000000000000000201","criatura":"65a000000000000000000101","testigo":"Leslie Yepp","ubicacion":"Parque Ramsett","fecha":"2026-10-01T12:00:00.000Z","descripcion":"Dato ficticio de examen","createdAt":"2026-10-20T23:40:38.137Z","updatedAt":"2026-10-21T15:42:54.062Z","__v":0},"requestId":"8f9ea6cc-b5ce-4a22-b43d-37aa7ab7ce30"}
+HTTP_STATUS:200
+
+===== B-03 PUT tipo valido mecanica sobre dragon =====
+{"criatura":{"_id":"65a000000000000000000102","nombre":"El Drag├│n del Estacionamiento","tipo":"mecanica","habilidades":["escupe fuego"],"nivelPeligro":8,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-21T15:42:54.243Z","__v":0},"requestId":"88312621-c738-4d46-90d8-dae5b594ab9b"}
+HTTP_STATUS:200
+
+===== B-03 PUT fantasma =====
+{"error":"Tipo inv├ílido: solo se admiten mitica, elemental, mecanica y espectral","requestId":"e08cd198-ab07-4697-ad92-54a67f43a9ea"}
+HTTP_STATUS:400
+
+===== B-03 GET conserva mecanica =====
+{"criatura":{"_id":"65a000000000000000000102","nombre":"El Drag├│n del Estacionamiento","tipo":"mecanica","habilidades":["escupe fuego"],"nivelPeligro":8,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-21T15:42:54.243Z","__v":0},"requestId":"db5478a4-d8ea-46bb-9569-fc0c05d1e817"}
+HTTP_STATUS:200
+
+===== B-03 RESTORE mitica =====
+{"criatura":{"_id":"65a000000000000000000102","nombre":"El Drag├│n del Estacionamiento","tipo":"mitica","habilidades":["escupe fuego"],"nivelPeligro":8,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-21T15:42:54.620Z","__v":0},"requestId":"892d00f2-abf4-40ca-be43-0fca74e4dfc1"}
+HTTP_STATUS:200
+
+===== REGRESION POST criatura =====
+{"criatura":{"nombre":"Criatura Sin Avistamientos","tipo":"mecanica","habilidades":[],"nivelPeligro":1,"estado":"activa","_id":"6ad8dd7e6fb71130f9198b1b","createdAt":"2026-10-21T15:42:54.806Z","updatedAt":"2026-10-21T15:42:54.806Z","__v":0},"requestId":"8cdd6512-90c0-4ffd-aa17-8dd9ca26729a"}
+HTTP_STATUS:201
+

@@ -1,0 +1,36 @@
+﻿===== B-03 PUT fantasma tras tipo elemental =====
+{"error":"Tipo inv├ílido: solo se admiten mitica, elemental, mecanica y espectral","requestId":"a7f44c7b-5bb7-4283-99bc-a5fe98e4df96"}
+HTTP_STATUS:400
+
+===== B-03 GET conserva elemental =====
+{"criatura":{"_id":"65a000000000000000000102","nombre":"El Drag├│n del Estacionamiento","tipo":"elemental","habilidades":["escupe fuego"],"nivelPeligro":8,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-21T15:45:07.006Z","__v":0},"requestId":"eea84ed6-4bef-4ac3-a8ba-2ab7a52c4200"}
+HTTP_STATUS:200
+
+===== RESTORE dragon mitica =====
+{"criatura":{"_id":"65a000000000000000000102","nombre":"El Drag├│n del Estacionamiento","tipo":"mitica","habilidades":["escupe fuego"],"nivelPeligro":8,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-21T15:45:31.471Z","__v":0},"requestId":"4388e995-ced0-4a07-b840-917a9a123b61"}
+HTTP_STATUS:200
+
+===== RESTORE avistamiento Leslie =====
+{"avistamiento":{"_id":"65a000000000000000000201","criatura":"65a000000000000000000101","testigo":"Leslie Yepp","ubicacion":"Parque Ramsett","fecha":"2026-10-01T12:00:00.000Z","descripcion":"Dato ficticio de examen","createdAt":"2026-10-20T23:40:38.137Z","updatedAt":"2026-10-21T15:45:32.103Z","__v":0},"requestId":"f1f01001-824d-4625-b150-03229153d9c9"}
+HTTP_STATUS:200
+
+===== GET Leslie restaurado =====
+{"avistamiento":{"_id":"65a000000000000000000201","criatura":{"_id":"65a000000000000000000101","nombre":"La Ardilla del Martes","tipo":"elemental","habilidades":["aparece los martes"],"nivelPeligro":2,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-21T15:41:33.239Z","__v":0},"testigo":"Leslie Yepp","ubicacion":"Parque Ramsett","fecha":"2026-10-01T12:00:00.000Z","descripcion":"Dato ficticio de examen","createdAt":"2026-10-20T23:40:38.137Z","updatedAt":"2026-10-21T15:45:32.103Z","__v":0},"requestId":"1ef5baa3-d94f-49c3-bc9b-1f33450c10b9"}
+HTTP_STATUS:200
+
+===== REGRESION DELETE criatura con avistamientos =====
+{"error":"Elimina primero los avistamientos asociados","requestId":"d0429e8a-1343-4a9a-95b0-b1f276660c65"}
+HTTP_STATUS:409
+
+===== REGRESION DELETE criatura de prueba sin avistamientos =====
+
+HTTP_STATUS:204
+
+===== GET criatura de prueba ya no existe =====
+{"error":"Criatura no encontrada","requestId":"35c441a8-c7ac-4491-b321-645688687600"}
+HTTP_STATUS:404
+
+===== GET ardilla sigue =====
+{"criatura":{"_id":"65a000000000000000000101","nombre":"La Ardilla del Martes","tipo":"elemental","habilidades":["aparece los martes"],"nivelPeligro":2,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-21T15:41:33.239Z","__v":0},"requestId":"dfec3b85-7b6b-4534-b2ec-ac3cf905e047"}
+HTTP_STATUS:200
+

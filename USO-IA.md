@@ -1,7 +1,5 @@
 # Uso de IA
-- Herramientas utilizadas (o "No utilizada"):
-- Una o dos solicitudes representativas SIN secretos:
-- Decisión técnica: qué acepté, ajusté o descarté y por qué:
-- Cómo verifiqué los cambios:
-
-No se exige rechazar una sugerencia si todas fueron útiles, ni entregar conversaciones completas. No usar IA no reduce puntaje.
+- Herramientas utilizadas (o "No utilizada"): Cursor, con el agente de código de esta sesión.
+- Una o dos solicitudes representativas SIN secretos: diagnosticar los cuatro reportes de la versión B (edición de avistamiento, detalle de criatura, tipo inválido y filtro) a partir de ENUNCIADO.md, REPORTES.md y el código existente; corregir solo la causa de cada uno y comprobarlo con la API y el navegador.
+- Decisión técnica: qué acepté, ajusté o descarté y por qué: Acepté las cuatro causas que coincidían con el código y con la reproducción: el formulario de edición enviaba `criaturaId`, el GET de un avistamiento no poblaba la criatura, el PUT de criatura no validaba el tipo, y el efecto del filtro no dependía de `criaturaId`. Mantuve la comprobación 404 de referencia inexistente porque ya cumplía el contrato. Descarté el enlace `pawnee-examen: file:..` que `npm install --prefix` escribió en los package.json: no forma parte de la aplicación y no se versionó.
+- Cómo verifiqué los cambios: peticiones HTTP antes y después (`evidencias/antes-api.txt`, `evidencias/despues-api.txt`, `evidencias/regresion-api.txt`), recorrido en http://127.0.0.1:5173 (`evidencias/recorrido-ui.txt`) y `npm run check`.

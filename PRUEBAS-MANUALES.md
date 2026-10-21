@@ -1,24 +1,24 @@
 # Verificación manual · Versión B
 
 ## B-01
-- [ ] El formulario guarda la edición con 200 y conserva lo no modificado.
-- [ ] GET y recarga confirman la nueva criatura y ubicación.
-- [ ] Una referencia inexistente por HTTP recibe 404 y conserva la asociación anterior.
+- [x] El formulario guarda la edición con 200 y conserva lo no modificado.
+- [x] GET y recarga confirman la nueva criatura y ubicación.
+- [x] Una referencia inexistente por HTTP recibe 404 y conserva la asociación anterior.
 
 ## B-02
-- [ ] El detalle muestra el nombre de la criatura relacionada.
-- [ ] El endpoint y el tipo/uso del dato en React son coherentes.
-- [ ] Un id de avistamiento válido inexistente produce error comprensible sin pantalla en blanco.
+- [x] El detalle muestra el nombre de la criatura relacionada.
+- [x] El endpoint y el tipo/uso del dato en React son coherentes.
+- [x] Un id de avistamiento válido inexistente produce error comprensible sin pantalla en blanco.
 
 ## B-03
-- [ ] Un tipo válido como mitica se guarda con status 200.
-- [ ] El valor fantasma se rechaza con 400 y mensaje comprensible.
-- [ ] Un GET después del rechazo conserva el último tipo válido.
+- [x] Un tipo válido como mitica se guarda con status 200.
+- [x] El valor fantasma se rechaza con 400 y mensaje comprensible.
+- [x] Un GET después del rechazo conserva el último tipo válido.
 
 ## B-04
-- [ ] Cambiar el selector inicia la consulta y solo muestra registros asociados.
-- [ ] Se diferencian loading, error y empty; crear una criatura sin avistamientos permite probar vacío.
-- [ ] Volver a Todas restaura la lista sin actualización manual.
+- [x] Cambiar el selector inicia la consulta y solo muestra registros asociados.
+- [x] Se diferencian loading, error y empty; crear una criatura sin avistamientos permite probar vacío.
+- [x] Volver a Todas restaura la lista sin actualización manual.
 
 ## Recorrido integrado final
 1. Consultar y filtrar avistamientos por criatura.

@@ -1,0 +1,28 @@
+Recorrido en http://127.0.0.1:5173 después de las correcciones. No incluye secretos.
+
+Filtro, sin pulsar Actualizar lista:
+- Todas: April Ludgate · Brillo · Ribera; Tom Haverford · Dragón · Estacionamiento; Ron Swandson · Ardilla · Parque Ramsett; Leslie Yepp · Ardilla · Parque Ramsett.
+- El Dragón del Estacionamiento: solo Tom Haverford · El Dragón del Estacionamiento · Estacionamiento.
+- El Brillo del Río Wamapo: solo April Ludgate · El Brillo del Río Wamapo · Ribera.
+- Criatura Sin Avistamientos (creada por POST, sin avistamientos, borrada al final): "No hay resultados para esta consulta."
+- Volver a Todas restauró los cuatro registros.
+- Al entrar a la página se mostró "Cargando...".
+
+Detalle GET visual de /avistamientos/65a000000000000000000201 antes de editar:
+Avistamiento: Leslie Yepp
+Criatura: La Ardilla del Martes
+Ubicación: Parque Ramsett
+
+Edición desde el formulario: criatura El Dragón del Estacionamiento, ubicación Plaza Lotus. Tras Guardar y tras recargar:
+Criatura: El Dragón del Estacionamiento
+Ubicación: Plaza Lotus
+Testigo y descripción se conservaron.
+
+Id válido inexistente /avistamientos/65a000000000000000000299:
+"Avistamiento no encontrado · petición …" con el encabezado visible.
+
+Edición de criatura en la UI: El Dragón del Estacionamiento pasó de mitica a elemental y la ficha mostró Tipo elemental. El rechazo de fantasma se hizo por HTTP porque el selector no ofrece ese valor; ver evidencias/regresion-api.txt.
+
+Error: con el backend detenido, cambiar el selector mostró "Error: HTTP 500" y ocultó la lista. Al reiniciar el backend y pulsar Actualizar lista, el filtro del Dragón volvió a mostrar solo Tom Haverford.
+
+La semilla se restauró después: Leslie en Parque Ramsett con La Ardilla del Martes, y el Dragón otra vez en mitica. La criatura de prueba fue eliminada.

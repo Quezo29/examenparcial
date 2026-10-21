@@ -1,0 +1,44 @@
+﻿===== B-02 GET detalle =====
+{"avistamiento":{"_id":"65a000000000000000000201","criatura":"65a000000000000000000101","testigo":"Leslie Yepp","ubicacion":"Parque Ramsett","fecha":"2026-10-01T12:00:00.000Z","descripcion":"Dato ficticio de examen","createdAt":"2026-10-20T23:40:38.137Z","updatedAt":"2026-10-20T23:40:38.137Z","__v":0},"requestId":"b779ee12-fd13-43cd-bf09-862435602945"}
+HTTP_STATUS:200
+
+===== B-02 GET id valido inexistente =====
+{"error":"Avistamiento no encontrado","requestId":"7b1498a1-e905-429a-bb7e-a084f42ec6cc"}
+HTTP_STATUS:404
+
+===== LISTA avistamientos (contraste populate) =====
+{"avistamientos":[{"_id":"65a000000000000000000202","criatura":{"_id":"65a000000000000000000101","nombre":"La Ardilla del Martes","tipo":"elemental","habilidades":["aparece los martes"],"nivelPeligro":2,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-20T23:40:37.151Z","__v":0},"testigo":"Ron Swandson","ubicacion":"Parque Ramsett","fecha":"2026-10-02T12:00:00.000Z","descripcion":"Dato ficticio de examen","createdAt":"2026-10-20T23:40:38.137Z","updatedAt":"2026-10-20T23:40:38.137Z","__v":0},{"_id":"65a000000000000000000201","criatura":{"_id":"65a000000000000000000101","nombre":"La Ardilla del Martes","tipo":"elemental","habilidades":["aparece los martes"],"nivelPeligro":2,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-20T23:40:37.151Z","__v":0},"testigo":"Leslie Yepp","ubicacion":"Parque Ramsett","fecha":"2026-10-01T12:00:00.000Z","descripcion":"Dato ficticio de examen","createdAt":"2026-10-20T23:40:38.137Z","updatedAt":"2026-10-20T23:40:38.137Z","__v":0}],"total":2,"requestId":"f54f637c-4f41-47f4-ac6e-9b4ddba5a6cb"}
+HTTP_STATUS:200
+
+===== B-01 PUT formulario criaturaId =====
+{"error":"Campos no permitidos en el cuerpo","requestId":"b639bfe6-515c-4196-95c7-e19f278258ae"}
+HTTP_STATUS:400
+
+===== B-01 GET tras PUT formulario =====
+{"avistamiento":{"_id":"65a000000000000000000201","criatura":"65a000000000000000000101","testigo":"Leslie Yepp","ubicacion":"Parque Ramsett","fecha":"2026-10-01T12:00:00.000Z","descripcion":"Dato ficticio de examen","createdAt":"2026-10-20T23:40:38.137Z","updatedAt":"2026-10-20T23:40:38.137Z","__v":0},"requestId":"fd7bf8a6-9eb0-4082-ba72-16972b9d079f"}
+HTTP_STATUS:200
+
+===== B-01 PUT criatura inexistente =====
+{"error":"Criatura referenciada no encontrada","requestId":"2b2c198e-3dc1-45c4-a349-e988b15aa74e"}
+HTTP_STATUS:404
+
+===== B-01 GET tras criatura inexistente =====
+{"avistamiento":{"_id":"65a000000000000000000201","criatura":"65a000000000000000000101","testigo":"Leslie Yepp","ubicacion":"Parque Ramsett","fecha":"2026-10-01T12:00:00.000Z","descripcion":"Dato ficticio de examen","createdAt":"2026-10-20T23:40:38.137Z","updatedAt":"2026-10-20T23:40:38.137Z","__v":0},"requestId":"d9d37e81-2986-4ee0-aba8-f1640aa554d6"}
+HTTP_STATUS:200
+
+===== B-03 PUT fantasma =====
+{"criatura":{"_id":"65a000000000000000000101","nombre":"La Ardilla del Martes","tipo":"fantasma","habilidades":["aparece los martes"],"nivelPeligro":2,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-21T15:41:32.885Z","__v":0},"requestId":"fe3ecd3c-8b9c-4c47-b450-3e4541569b9a"}
+HTTP_STATUS:200
+
+===== B-03 GET tras fantasma =====
+{"criatura":{"_id":"65a000000000000000000101","nombre":"La Ardilla del Martes","tipo":"fantasma","habilidades":["aparece los martes"],"nivelPeligro":2,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-21T15:41:32.885Z","__v":0},"requestId":"ad7f506d-aa9f-495e-afae-babb062638ad"}
+HTTP_STATUS:200
+
+===== RESTORE elemental =====
+{"criatura":{"_id":"65a000000000000000000101","nombre":"La Ardilla del Martes","tipo":"elemental","habilidades":["aparece los martes"],"nivelPeligro":2,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-21T15:41:33.239Z","__v":0},"requestId":"cd0d1c5b-ee40-4b83-9cc3-6cf73e4d8c5d"}
+HTTP_STATUS:200
+
+===== GET tras restaurar =====
+{"criatura":{"_id":"65a000000000000000000101","nombre":"La Ardilla del Martes","tipo":"elemental","habilidades":["aparece los martes"],"nivelPeligro":2,"estado":"activa","createdAt":"2026-10-20T23:40:37.151Z","updatedAt":"2026-10-21T15:41:33.239Z","__v":0},"requestId":"d71f43bb-096f-4f77-adc0-447d80ccd5f5"}
+HTTP_STATUS:200
+
